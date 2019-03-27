@@ -4,8 +4,14 @@ import Util.time
 
 object Main {
   def main(args: Array[String]): Unit = {
-    println("Advent of Code 2018.")
+    println("Advent of Code 2018")
 
-    time { Day01.run() }
+    header("Day01") { Day01.run() }
+    header("Day02") { Day02.run() }
+  }
+
+  def header(label: String)(block: => Unit): Unit = {
+    println(s"-- $label -----------------------------")
+    time { block }
   }
 }

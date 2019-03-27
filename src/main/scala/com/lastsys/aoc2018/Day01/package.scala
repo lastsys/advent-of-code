@@ -11,13 +11,11 @@ package object Day01 extends AocTask {
     println(s"Day02 / Part 2 = ${data.map(part2)}")
   }
 
-  def name: String = "Task 1"
-
   def part1(data: Seq[Long]): Long = data.sum
 
   def part2(data: Seq[Long]): Long = {
     @tailrec
-    def next(stream: Stream[Long], sum: Long = 0, state: Set[Long] = Set.empty): Long = {
+    def next(stream: Stream[Long], sum: Long = 0, state: Set[Long] = Set(0)): Long = {
       val v = sum + stream.head
       if (state.contains(v)) v else next(stream.tail, sum + stream.head, state + v)
     }
