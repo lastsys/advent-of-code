@@ -6,8 +6,10 @@ import scala.util.{Try, Using}
 package object Day02 extends AocTask {
   def run(): Unit = {
     val data = readData("day02/input.txt")
-    println(s"Day02 / Part1 = ${data.map(part1)}")
-    println(s"Day02 / Part2 = ${data.map(part2)}")
+    data.map { d =>
+      println(s"Day02 / Part1 = ${part1(d)}")
+      println(s"Day02 / Part2 = ${part2(d)}")
+    }
   }
 
   def countLetters(s: String): Map[Char, Int] =

@@ -7,8 +7,10 @@ import scala.util.{Try, Using}
 package object Day01 extends AocTask {
   def run(): Unit = {
     val data = readData("day01/input.txt")
-    println(s"Day01 / Part 1 = ${data.map(part1)}")
-    println(s"Day02 / Part 2 = ${data.map(part2)}")
+    data.map { d =>
+      println(s"Day01 / Part 1 = ${part1(d)}")
+      println(s"Day02 / Part 2 = ${part2(d)}")
+    }
   }
 
   def part1(data: Seq[Long]): Long = data.sum

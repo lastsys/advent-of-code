@@ -8,6 +8,7 @@ object Main {
 
     header("Day01") { Day01.run() }
     header("Day02") { Day02.run() }
+    header("Day03") { Day03.run() }
   }
 
   def header(label: String)(block: => Unit): Unit = {
