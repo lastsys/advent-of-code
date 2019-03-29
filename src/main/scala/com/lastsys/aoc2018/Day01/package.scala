@@ -7,7 +7,7 @@ import scala.util.{Try, Using}
 package object Day01 extends AocTask {
   def run(): Unit = {
     val data = readData("day01/input.txt")
-    data.map { d =>
+    data.foreach { d =>
       println(s"Day01 / Part 1 = ${part1(d)}")
       println(s"Day02 / Part 2 = ${part2(d)}")
     }

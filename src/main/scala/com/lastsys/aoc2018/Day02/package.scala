@@ -6,16 +6,14 @@ import scala.util.{Try, Using}
 package object Day02 extends AocTask {
   def run(): Unit = {
     val data = readData("day02/input.txt")
-    data.map { d =>
+    data.foreach { d =>
       println(s"Day02 / Part1 = ${part1(d)}")
       println(s"Day02 / Part2 = ${part2(d)}")
     }
   }
 
   def countLetters(s: String): Map[Char, Int] =
-    s.foldLeft(Map.empty[Char, Int]) { (m, c) =>
-      m + (c -> m.get(c).fold(1) { _ + 1 })
-    }
+    s.foldLeft(Map.empty[Char, Int])(Util.incrementMap)
 
   def haveCount(count: Map[Char, Int], n: Int): Boolean =
     count.values.foldLeft(false) { (s, m) =>
