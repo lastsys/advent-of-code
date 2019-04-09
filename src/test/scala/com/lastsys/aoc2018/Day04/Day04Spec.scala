@@ -2,9 +2,9 @@ package com.lastsys.aoc2018.Day04
 
 import java.time.{OffsetDateTime, ZoneOffset}
 
-import fastparse.Parsed.Success
-import org.scalatest.{FlatSpec, Matchers}
+import fastparse.Parsed.{Failure, Success}
 import fastparse.parse
+import org.scalatest.{FlatSpec, Matchers}
 
 class Day04Spec extends FlatSpec with Matchers {
   def date(y: Int, mo: Int, d: Int, h: Int, mi: Int): OffsetDateTime =
@@ -43,6 +43,25 @@ class Day04Spec extends FlatSpec with Matchers {
         Day(99, "....................................##########.............."),
         Day(99, ".............................................##########.....")
       )
+    }
+  }
+
+  "Finding minute most asleep" should "result in the correct minute for each guard" in {
+    val data = readData("day04/test-input-p1-01.txt")
+    data.map(parse(_, Parser.events(_))).map {
+      case Success(events, _) =>
+        val days = generateDays(events)
+        findMinuteMostAsleep(10, days) shouldBe Count(2, 24)
+        findMinuteMostAsleep(99, days) shouldBe Count(3, 45)
+      case Failure(label, _, _) => fail(label)
+    }
+  }
+
+  "Part 1" should "generate the correct product" in {
+    val data = readData("day04/test-input-p1-01.txt")
+    data.map(parse(_, Parser.events(_))).map {
+      case Success(events, _) =>
+        part1(events) shouldBe 99 * 45
     }
   }
 }
