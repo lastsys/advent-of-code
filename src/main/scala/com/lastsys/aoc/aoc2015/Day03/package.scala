@@ -39,8 +39,8 @@ package object Day03 {
   def part1(directions: String): Int = runProgram(directions).size
 
   def part2(directions: String): Int = {
-    val d1 = directions.chars.toArray.zipWithIndex.filter { case (_, i) => i % 2 == 0 }.map(_._1.toChar).mkString
-    val d2 = directions.chars.toArray.zipWithIndex.filter { case (_, i) => (i + 1) % 2 == 0 }.map(_._1.toChar).mkString
+    val d1 = (for (i <- 0 until(directions.length, 2)) yield directions.charAt(i)).mkString
+    val d2 = (for (i <- 1 until(directions.length, 2)) yield directions.charAt(i)).mkString
     runProgram(d1).pipe(runProgram(d2, _)).size
   }
 
