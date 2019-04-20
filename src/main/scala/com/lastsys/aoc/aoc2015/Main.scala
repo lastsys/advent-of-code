@@ -7,5 +7,6 @@ object Main {
     println("Advent of Code 2015")
 
     header("Day01") { Day01.run() }
+    header("Day02") { Day02.run() }
   }
 }
