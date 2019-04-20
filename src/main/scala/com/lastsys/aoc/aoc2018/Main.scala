@@ -1,6 +1,6 @@
 package com.lastsys.aoc.aoc2018
 
-import com.lastsys.aoc.Util.time
+import com.lastsys.aoc.Util.header
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -10,10 +10,5 @@ object Main {
     header("Day02") { Day02.run() }
     header("Day03") { Day03.run() }
     header("Day04") { Day04.run() }
-  }
-
-  def header(label: String)(block: => Unit): Unit = {
-    println(s"-- $label -----------------------------")
-    time { block }
   }
 }

@@ -21,4 +21,9 @@ object Util {
     */
   def incrementMap[A](map: Map[A, Int], key: A): Map[A, Int] =
     map + (key -> map.get(key).fold(1) { _ + 1 })
+
+  def header(label: String)(block: => Unit): Unit = {
+    println(s"-- $label -----------------------------")
+    time { block }
+  }
 }
