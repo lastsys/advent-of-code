@@ -1,4 +1,4 @@
-package com.lastsys.aoc2018
+package com.lastsys.aoc
 
 trait AocTask {
   def run(): Unit

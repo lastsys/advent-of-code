@@ -1,5 +1,6 @@
-package com.lastsys.aoc2018
+package com.lastsys.aoc.aoc2018
 
+import com.lastsys.aoc.AocTask
 import fastparse.Parsed.Success
 import fastparse.parse
 
@@ -8,7 +9,7 @@ import scala.util.{Try, Using}
 
 package object Day04 extends AocTask {
   override def run(): Unit = {
-    val data = readData("day04/input.txt")
+    val data = readData("2018/day04/input.txt")
     val events = data.map(parse(_, Parser.events(_)))
     events.foreach {
       case Success(e, _) =>
@@ -44,8 +45,6 @@ package object Day04 extends AocTask {
       day.copy(awake = awake)
     }
   }
-
-  case class Count(count: Int, minute: Int)
 
   /** Search for the minute where a given guard is most asleep.
     *

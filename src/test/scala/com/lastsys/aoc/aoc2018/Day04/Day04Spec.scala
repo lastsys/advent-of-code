@@ -1,4 +1,4 @@
-package com.lastsys.aoc2018.Day04
+package com.lastsys.aoc.aoc2018.Day04
 
 import java.time.{OffsetDateTime, ZoneOffset}
 
@@ -11,7 +11,7 @@ class Day04Spec extends FlatSpec with Matchers {
     OffsetDateTime.of(y, mo, d, h, mi, 0, 0, ZoneOffset.UTC)
 
   "The event parser" should "read input files" in {
-    val data = readData("day04/test-input-p1-01.txt")
+    val data = readData("2018/day04/test-input-p1-01.txt")
     data.map(parse(_, Parser.events(_)) shouldBe Seq(
       Event(date(1518, 11, 1, 0, 0), BeginShift(10)),
       Event(date(1518, 11, 1, 0, 5), FallsAsleep),
@@ -34,7 +34,7 @@ class Day04Spec extends FlatSpec with Matchers {
   }
 
   "Generating data for days" should "result in correct sleeping patterns" in {
-    val data = readData("day04/test-input-p1-01.txt")
+    val data = readData("2018/day04/test-input-p1-01.txt")
     data.map(parse(_, Parser.events(_))).map {
       case Success(events, _) => generateDays(events) shouldBe Seq(
         Day(10, ".....####################.....#########################....."),
@@ -47,7 +47,7 @@ class Day04Spec extends FlatSpec with Matchers {
   }
 
   "Finding minute most asleep" should "result in the correct minute for each guard" in {
-    val data = readData("day04/test-input-p1-01.txt")
+    val data = readData("2018/day04/test-input-p1-01.txt")
     data.map(parse(_, Parser.events(_))).map {
       case Success(events, _) =>
         val days = generateDays(events)
@@ -58,7 +58,7 @@ class Day04Spec extends FlatSpec with Matchers {
   }
 
   "Part 1" should "generate the correct product" in {
-    val data = readData("day04/test-input-p1-01.txt")
+    val data = readData("2018/day04/test-input-p1-01.txt")
     data.map(parse(_, Parser.events(_))).map {
       case Success(events, _) =>
         part1(events) shouldBe 99 * 45

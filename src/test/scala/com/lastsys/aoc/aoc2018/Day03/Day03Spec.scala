@@ -1,14 +1,13 @@
-package com.lastsys.aoc2018.Day03
+package com.lastsys.aoc.aoc2018.Day03
 
-import fastparse.Parsed
+import fastparse.{Parsed, parse}
 import org.scalatest.{FlatSpec, Matchers}
-import fastparse.parse
 
 import scala.util.Success
 
 class Day03Spec extends FlatSpec with Matchers {
   "The cut parser" should "read input files" in {
-    val data = readData("day03/test-input-p1-01.txt")
+    val data = readData("2018/day03/test-input-p1-01.txt")
     data.map(parse(_, Parser.cuts(_)) shouldBe Seq(
       Cut(1, 1, 3, 4, 4),
       Cut(2, 3, 1, 4, 4),
@@ -16,7 +15,7 @@ class Day03Spec extends FlatSpec with Matchers {
   }
 
   "Part 1" should "pass test case" in {
-    val data = readData("day03/test-input-p1-01.txt")
+    val data = readData("2018/day03/test-input-p1-01.txt")
     val cuts = data.map(parse(_, Parser.cuts(_)))
     cuts.map {
       case Parsed.Success(v, _) => part1(v)
@@ -24,7 +23,7 @@ class Day03Spec extends FlatSpec with Matchers {
   }
 
   "Part 2" should "pass test case" in {
-    val data = readData("day03/test-input-p1-01.txt")
+    val data = readData("2018/day03/test-input-p1-01.txt")
     val cuts = data.map(parse(_, Parser.cuts(_)))
     cuts.map {
       case Parsed.Success(v, _) => part2(v)

@@ -1,7 +1,8 @@
-package com.lastsys.aoc2018.Day03
+package com.lastsys.aoc.aoc2018.Day03
 
 object Parser {
-  import fastparse._, MultiLineWhitespace._
+  import fastparse._
+  import MultiLineWhitespace._
 
   def cuts[_: P]: P[Seq[Cut]] = P(cut.rep)
 

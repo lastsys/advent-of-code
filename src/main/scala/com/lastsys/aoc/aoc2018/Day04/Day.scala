@@ -1,4 +1,4 @@
-package com.lastsys.aoc2018.Day04
+package com.lastsys.aoc.aoc2018.Day04
 
 case class Day(guardId: Int, awake: Vector[Int] = Vector.fill(60)(0))
 

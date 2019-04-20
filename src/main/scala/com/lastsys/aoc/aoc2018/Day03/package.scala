@@ -1,14 +1,15 @@
-package com.lastsys.aoc2018
+package com.lastsys.aoc.aoc2018
 
+import com.lastsys.aoc.{AocTask, Util}
 import fastparse.Parsed.Success
+import fastparse.parse
 
 import scala.io.Source
 import scala.util.{Try, Using}
-import fastparse.parse
 
 package object Day03 extends AocTask {
   override def run(): Unit = {
-    val data = readData("day03/input.txt")
+    val data = readData("2018/day03/input.txt")
     val cuts = data.map(parse(_, Parser.cuts(_)))
     cuts.foreach {
       case Success(value, _) =>

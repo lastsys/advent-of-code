@@ -1,11 +1,13 @@
-package com.lastsys.aoc2018
+package com.lastsys.aoc.aoc2018
+
+import com.lastsys.aoc.{AocTask, Util}
 
 import scala.io.Source
 import scala.util.{Try, Using}
 
 package object Day02 extends AocTask {
   def run(): Unit = {
-    val data = readData("day02/input.txt")
+    val data = readData("2018/day02/input.txt")
     data.foreach { d =>
       println(s"Day02 / Part1 = ${part1(d)}")
       println(s"Day02 / Part2 = ${part2(d)}")

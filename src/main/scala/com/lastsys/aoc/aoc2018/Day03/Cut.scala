@@ -1,4 +1,4 @@
-package com.lastsys.aoc2018.Day03
+package com.lastsys.aoc.aoc2018.Day03
 
 case class Cut(id: Int, x: Int, y: Int, w: Int, h: Int) {
   def overlap(that: Cut): Boolean = {

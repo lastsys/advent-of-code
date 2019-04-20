@@ -1,4 +1,4 @@
-package com.lastsys.aoc2018
+package com.lastsys.aoc
 
 object Util {
   def time[R](block: => R): R = {

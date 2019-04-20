@@ -1,6 +1,6 @@
-package com.lastsys.aoc2018
+package com.lastsys.aoc.aoc2018
 
-import com.lastsys.aoc2018.Util.time
+import com.lastsys.aoc.Util.time
 
 object Main {
   def main(args: Array[String]): Unit = {
