@@ -1,6 +1,5 @@
 package com.lastsys.aoc.aoc2015.Day04
 
-import com.lastsys.aoc.aoc2015.Day04
 import org.scalatest.prop.TableDrivenPropertyChecks
 import org.scalatest.{FlatSpec, Matchers}
 
@@ -10,15 +9,15 @@ class Day04Spec extends FlatSpec with Matchers with TableDrivenPropertyChecks {
     toHex(a) shouldBe "0000021ff043"
   }
 
-  "findHash" should "return results according to examples" in {
-    val examples = Table(
-      ("key", "number"),
-      ("abcdef", 609043L),
-      ("pqrstuv", 1048970L)
-    )
-
-    forAll (examples) { (key, number) =>
-      Day04.findHash(key, "00000") shouldBe number
-    }
-  }
+//  "findHash" should "return results according to examples" in {
+//    val examples = Table(
+//      ("key", "number"),
+//      ("abcdef", 609043L),
+//      ("pqrstuv", 1048970L)
+//    )
+//
+//    forAll (examples) { (key, number) =>
+//      Day04.findHash(key, "00000") shouldBe number
+//    }
+//  }
 }
