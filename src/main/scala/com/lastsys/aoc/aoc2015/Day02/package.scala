@@ -1,9 +1,11 @@
 package com.lastsys.aoc.aoc2015
 
+import com.lastsys.aoc.AocTask
+
 import scala.io.Source
 import scala.util.{Try, Using}
 
-package object Day02 {
+package object Day02 extends AocTask {
   def run(): Unit = {
     val data = readData("2015/day02/input.txt")
     data.foreach { d =>

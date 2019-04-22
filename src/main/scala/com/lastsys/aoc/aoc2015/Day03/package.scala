@@ -1,13 +1,13 @@
 package com.lastsys.aoc.aoc2015
 
-import com.lastsys.aoc.Util
 import com.lastsys.aoc.util.Position
+import com.lastsys.aoc.{AocTask, Util}
 
 import scala.io.Source
 import scala.util.chaining._
 import scala.util.{Try, Using}
 
-package object Day03 {
+package object Day03 extends AocTask {
   def run(): Unit = {
     val data = readData("2015/day03/input.txt")
     data.foreach { d =>

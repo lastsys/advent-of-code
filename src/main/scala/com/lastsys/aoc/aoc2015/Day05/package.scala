@@ -1,9 +1,11 @@
 package com.lastsys.aoc.aoc2015
 
+import com.lastsys.aoc.AocTask
+
 import scala.io.Source
 import scala.util.{Try, Using}
 
-package object Day05 {
+package object Day05 extends AocTask {
   val vowels: Set[Char] = Set('a', 'e', 'i', 'o', 'u')
   val forbidden: Set[String] = Set("ab", "cd", "pq", "xy")
 

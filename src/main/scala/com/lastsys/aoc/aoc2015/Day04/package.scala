@@ -2,9 +2,11 @@ package com.lastsys.aoc.aoc2015
 
 import java.security.MessageDigest
 
+import com.lastsys.aoc.AocTask
+
 import scala.annotation.tailrec
 
-package object Day04 {
+package object Day04 extends AocTask {
   def run(): Unit = {
     val data = "bgvyzdsv"
     println(s"Day04 / Part 1 = ${part1(data)}")

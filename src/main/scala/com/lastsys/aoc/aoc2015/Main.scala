@@ -11,5 +11,6 @@ object Main {
     header("Day03") { Day03.run() }
 //    header("Day04") { Day04.run() }
     header("Day05") { Day05.run() }
+    header("Day06") { Day06.run() }
   }
 }
