@@ -1,10 +1,12 @@
 package com.lastsys.aoc.aoc2015
 
+import com.lastsys.aoc.AocTask
+
 import scala.collection.mutable
 import scala.io.Source
 import scala.util.{Try, Using}
 
-package object Day06 {
+package object Day06 extends AocTask {
   object Parser {
     import fastparse._
     import SingleLineWhitespace._
