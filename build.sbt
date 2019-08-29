@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "2.12.8"
+ThisBuild / scalaVersion := "2.13.0"
 ThisBuild / organization := "com.lastsys"
 ThisBuild / organizationName := "lastsys"
 ThisBuild / organizationHomepage := Some(url("https://blog.lastsys.com"))
@@ -9,7 +9,7 @@ lazy val aoc2018 = (project in file("."))
     version := "0.1",
     scalacOptions ++= Seq(
       // Cats relies on improved type inference for Scala 2.11.9 or later (https://typelevel.org/cats/)
-      "-Ypartial-unification",    // Enable partial unification in type constructor inference.
+//      "-Ypartial-unification",    // Enable partial unification in type constructor inference.
       "-Yrangepos",               // Use range positions for syntax trees.
       "-target:jvm-1.8",          // Target platform for object files.
       "-encoding", "utf8",        // Specify character encoding used by source files.
@@ -26,10 +26,10 @@ lazy val aoc2018 = (project in file("."))
       "-Ywarn-unused"             // Enable or disable specific unused warnings: _ for all.
     ),
     libraryDependencies ++= Seq(
-      "com.lihaoyi" %% "fastparse" % "2.1.0",
-      "org.typelevel" %% "cats-core" % "1.6.0",
-      "com.github.bigwheel" %% "util-backports" % "1.1",
-      "org.scalatest" %% "scalatest" % "3.0.5" % Test,
+      "com.lihaoyi" %% "fastparse" % "2.1.3",
+      "org.typelevel" %% "cats-core" % "2.0.0-RC1",
+//      "com.github.bigwheel" %% "util-backports" % "1.1",
+      "org.scalatest" %% "scalatest" % "3.0.8" % Test,
       "org.scalacheck" %% "scalacheck" % "1.14.0" % Test
     ),
     // https://stackoverflow.com/a/35387923/4435991
